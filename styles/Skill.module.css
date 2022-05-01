@@ -1,0 +1,66 @@
+.skills li {
+    display: block;
+    position: relative;
+    background-color: #888;
+    color: #fff !important;
+    margin: 10px 0;
+    transition: width 300ms ease-in-out;
+    animation: load 2s 0s;
+    -webkit-animation: load 2s 0s;
+    -moz-animation: load 2s 0s;
+    -o-animation: load 2s 0s;
+}
+
+
+@keyframes load {
+    from {
+        width: 0%
+    }
+}
+
+@-webkit-keyframes load {
+    from {
+        width: 0%
+    }
+}
+
+@-moz-keyframes load {
+    from {
+        width: 0%
+    }
+}
+
+@-o-keyframes load {
+    from {
+        width: 0%
+    }
+}
+
+.collapsed .skills li {
+    width: 0 !important;
+}
+
+.skills li p {
+    padding: 10px;
+    margin: 0;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.skills li span {
+    position: absolute;
+    right: 10px;
+    display: inline-block;
+    width: 30px;
+    top: 11px;
+    text-align: right;
+    font-weight: normal;
+    color: #fff;
+    font-size: 11px;
+}
+
+@media screen and (max-width: 768px) {
+    .skills li p {
+        font-size: smaller;
+    }
+}
