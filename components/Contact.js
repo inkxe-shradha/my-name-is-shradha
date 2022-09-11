@@ -11,6 +11,8 @@ const validationSchema = Yup.object().shape({
   message: Yup.string().required("Message is required"),
 });
 const Contact = () => {
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [successMessage, setSuccessMessage] = React.useState("");
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -20,7 +22,18 @@ const Contact = () => {
     },
     validationSchema,
     onSubmit: (values) => {
-      console.log(values);
+      setIsLoading(true);
+      fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(values),
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          console.log(response);
+          setIsLoading(false);
+          setSuccessMessage(`Thanks for connecting with me. I would appreciate your time to
+                visit my website.`);
+        });
     },
   });
   return (
@@ -67,9 +80,6 @@ const Contact = () => {
                   <label htmlFor="name" className="mt-1">
                     Your name
                   </label>
-                  {formik.errors.name && formik.touched.name && (
-                    <div className="invalid-feedback">{formik.errors.name}</div>
-                  )}
                 </div>
               </div>
               <div className="col-md-6">
@@ -91,11 +101,6 @@ const Contact = () => {
                   <label htmlFor="email" className="mt-1">
                     Your email
                   </label>
-                  {formik.errors.email && formik.touched.email && (
-                    <div className="invalid-feedback">
-                      {formik.errors.email}
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
@@ -120,11 +125,6 @@ const Contact = () => {
                   <label htmlFor="subject" className="mt-1">
                     Subject
                   </label>
-                  {formik.errors.subject && formik.touched.subject && (
-                    <div className="invalid-feedback">
-                      {formik.errors.subject}
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
@@ -150,21 +150,33 @@ const Contact = () => {
                   <label htmlFor="message" className="mt-2">
                     Your message
                   </label>
-                  {formik.errors.message && formik.touched.message && (
-                    <div className="invalid-feedback">
-                      {formik.errors.message}
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
+            {successMessage && (
+              <div className="md-2 text-center">
+                <div className="alert alert-success" role="alert">
+                  {successMessage}
+                </div>
+              </div>
+            )}
             <div className="text-center text-md-left">
-              <button type="submit" className="btn btn-primary">
-                Connect
-              </button>
+              {isLoading ? (
+                <button className="btn btn-primary" type="button" disabled>
+                  <span
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  Loading...
+                </button>
+              ) : (
+                <button type="submit" className="btn btn-primary">
+                  Connect
+                </button>
+              )}
             </div>
           </form>
-
           <div className="status"></div>
         </div>
       </div>

@@ -22,7 +22,7 @@ const IntroductionBox = () => {
               </span>
               <div className="intro__text">
                 Hey! I am Shradha Suman Praharaj, a 26 year old web developer,
-                teacher, Freelancer and Gamer(Life is need to be enjoy! Right?)
+                teacher, Freelancer and Gamer(Life needs to be enjoyed.. Right?)
                 living in Sliver City Cuttack, Odisha. I am currently working as
                 Senior Software Engineer at{" "}
                 <a
@@ -32,6 +32,7 @@ const IntroductionBox = () => {
                 >
                   Mindtree
                 </a>
+                .
                 <br />
               </div>
               <div
@@ -43,17 +44,35 @@ const IntroductionBox = () => {
               </div>
               <div className="intro_social intro-soc">
                 <div className="intro-soc__item">
-                  <a href="#" title="" className="intro-soc__link twitter">
+                  <a
+                    href="https://twitter.com/shradhasuman21"
+                    title="Connect with me in twitter"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="intro-soc__link twitter"
+                  >
                     <i className="bx bxl-twitter"></i>
                   </a>
                 </div>
                 <div className="intro-soc__item">
-                  <a href="#" title="" className="intro-soc__link linkdin">
+                  <a
+                    href="https://www.linkedin.com/in/shradha-suman-praharaj20"
+                    title="Connect with me in LinkedIn"
+                    className="intro-soc__link linkdin"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <i className="bx bxl-linkedin"></i>
                   </a>
                 </div>
                 <div className="intro-soc__item">
-                  <a href="#" title="" className="intro-soc__link github">
+                  <a
+                    href="https://github.com/inkxe-shradha"
+                    title="my-git-hub"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="intro-soc__link github"
+                  >
                     <i className="bx bxl-github"></i>
                   </a>
                 </div>

@@ -10,7 +10,7 @@ const Footer = () => {
             <span>
               Here is the{" "}
               <a
-                href="https://github.com/"
+                href="https://github.com/inkxe-shradha/my-name-is-shradha"
                 target="_blank"
                 className="font-weight-bold"
                 rel="noreferrer"
@@ -31,17 +31,35 @@ const Footer = () => {
             <p>Where you can find me?</p>
             <div className="intro_social intro-soc justify-content-center">
               <div className="intro-soc__item">
-                <a href="#" title="" className="intro-soc__link twitter">
+                <a
+                  href="https://twitter.com/shradhasuman21"
+                  title="Connect with me in twitter"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="intro-soc__link twitter"
+                >
                   <i className="bx bxl-twitter"></i>
                 </a>
               </div>
               <div className="intro-soc__item">
-                <a href="#" title="" className="intro-soc__link linkdin">
+                <a
+                  href="https://www.linkedin.com/in/shradha-suman-praharaj20"
+                  title="Connect with me in twitter"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="intro-soc__link linkdin"
+                >
                   <i className="bx bxl-linkedin"></i>
                 </a>
               </div>
               <div className="intro-soc__item">
-                <a href="#" title="" className="intro-soc__link github">
+                <a
+                  href="https://github.com/inkxe-shradha"
+                  title="my-git-hub"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="intro-soc__link github"
+                >
                   <i className="bx bxl-github"></i>
                 </a>
               </div>

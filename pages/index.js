@@ -46,7 +46,7 @@ export default function Home() {
           name="apple-mobile-web-app-title"
           content="Shradha Suman Prahraj"
         />
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="application-name" content="Shradha Suman Prahraj" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta property="og:title" content="Shadha suman prahraj" />

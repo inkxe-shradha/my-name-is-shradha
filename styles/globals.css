@@ -523,6 +523,10 @@ body[data-theme="dark-theme"] .header {
   .intro-soc {
     justify-content: center;
   }
+
+  .about-text {
+    font-size: var(--font-size-xsm) !important;
+  }
 }
 
 /* Scrollbar styles */
@@ -699,7 +703,7 @@ body[data-theme="dark-theme"] .social-icons .github {
   font-size: var(--font-size-sm);
   line-height: 2rem;
   color: var(--text-color);
-  word-break: break-all;
+  word-break: keep-all;
   text-align: justify;
 }
 
@@ -769,6 +773,12 @@ body[data-theme="dark-theme"] textarea:focus {
   border: 1px solid var(--primary-color);
 }
 
+/* Animate notifications */
+.header__changer i {
+  animation: pulse 1s infinite;
+}
+
+
 /* Animation dark_mode_change */
 @keyframes dark_mode_change {
   0% {
@@ -807,5 +817,19 @@ body[data-theme="dark-theme"] textarea:focus {
 
   100% {
     background-position: 0% 0%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
