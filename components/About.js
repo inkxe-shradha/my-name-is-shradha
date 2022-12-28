@@ -111,7 +111,7 @@ const About = () => {
               </div>
               <div className="col-md-3">
                 <i className="bx bxs-bug-alt bx-tada"></i>
-                <CountUp end={1000} delay={0.5}>
+                <CountUp end={1000} delay={0}>
                   {({ countUpRef }) => (
                     <div className="counter">
                       <span ref={countUpRef} />
@@ -122,7 +122,7 @@ const About = () => {
               </div>
               <div className="col-md-3">
                 <i className="bx bx-line-chart"></i>
-                <CountUp end={50} delay={1}>
+                <CountUp end={50} delay={0}>
                   {({ countUpRef }) => (
                     <div className="counter">
                       <span ref={countUpRef} />
