@@ -40,7 +40,7 @@ const Header = ({ handleDarkMode }) => {
                 src="/SSP-full.png"
                 layout="fixed"
                 alt="My Name"
-                width={80}
+                width={150}
                 height={50}
               />
             </a>

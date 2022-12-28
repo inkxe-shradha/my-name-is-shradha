@@ -1,8 +1,24 @@
 import React from "react";
 import { Element } from "react-scroll/modules";
-import CountUp from "react-countup";
+import CountUp, { useCountUp } from "react-countup";
 const About = () => {
   const getCurrentYearExperience = new Date().getFullYear() - 2018;
+  const count = React.useRef(116032 + Math.floor(Math.random(100) * 100));
+  const countUpRef = React.useRef(null);
+  const { update } = useCountUp({
+    ref: countUpRef,
+    start: 0,
+    end: count.current,
+    delay: 0,
+  });
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      count.current = count.current + 50;
+      update(count.current + 50);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Element name="about">
@@ -42,11 +58,11 @@ const About = () => {
             <p className=" about-text font-secondary">
               I worked as a Senior software developer for{" "}
               <a
-                href="http://www.mindtree.com"
+                href="https://www.ltimindtree.com/"
                 target="_blank"
                 rel="noreferrer"
               >
-                Mindtree
+                LTIMindtree
               </a>
               .&nbsp;And in my free time, I love to do freelancing projects,
               Open-source contributions and also learn new things.
@@ -68,7 +84,7 @@ const About = () => {
               power.
               <br />
               <br />
-              {"->"} That`&apos;`s why I love to learn new things. Some of my
+              {"->"} That&apos;s why I love to learn new things. Some of my
               interests are Deep diving in Javascript (Both in frontend and
               backend), Learning AI, getting hands-on experience with AWS and
               cloud base systems, and Learning Android development skills like
@@ -83,18 +99,19 @@ const About = () => {
             <div className="counter-container row gap-3 justify-content-center">
               <div className="col-md-3">
                 <i className="bx bx-code-alt bx-tada bx-rotate-90"></i>
-                <CountUp start={0} end={116032} delay={0} redraw>
+                {/* <CountUp end={count} delay={0}>
                   {({ countUpRef }) => (
                     <div className="counter">
                       <span ref={countUpRef} />
                     </div>
                   )}
-                </CountUp>
+                </CountUp> */}
+                <div className="counter" ref={countUpRef} />
                 <span>Code Written</span>
               </div>
               <div className="col-md-3">
                 <i className="bx bxs-bug-alt bx-tada"></i>
-                <CountUp start={0} end={1000} delay={0} redraw>
+                <CountUp end={1000} delay={0.5}>
                   {({ countUpRef }) => (
                     <div className="counter">
                       <span ref={countUpRef} />
@@ -105,7 +122,7 @@ const About = () => {
               </div>
               <div className="col-md-3">
                 <i className="bx bx-line-chart"></i>
-                <CountUp start={0} end={50} delay={0} redraw>
+                <CountUp end={50} delay={1}>
                   {({ countUpRef }) => (
                     <div className="counter">
                       <span ref={countUpRef} />

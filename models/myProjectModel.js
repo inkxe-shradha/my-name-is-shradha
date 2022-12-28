@@ -1,5 +1,15 @@
 export const myProjectData = [
   {
+    id: 5,
+    image: "/assets/projects/svb.png",
+    name: "SVB Admin dashboard and widgets optimization",
+    description:
+      "Working with the SVB team to implement the different widgets that been used for the customer manage and give them flexibility to add, edit, priorities according to their requirements. Worked on the bugs and features.",
+    techStack:
+      "Gitlab CI/CD, React, Mobx, Typescript, Node.js, JavaScripts, SCSS, UI, UX, Figma, ETC",
+    demoLink: "https://connect.svb.com/",
+  },
+  {
     id: 4,
     image: "/assets/projects/northpointrugs.png",
     name: "NorthPointrugs",

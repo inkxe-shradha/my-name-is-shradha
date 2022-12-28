@@ -31,7 +31,7 @@ const Projects = () => {
                       src={ele.image}
                       alt={ele.name}
                       layout="fixed"
-                      width={330}
+                      width={360}
                       height={300}
                     />
                     <h5 className="my-3">{ele.name}</h5>

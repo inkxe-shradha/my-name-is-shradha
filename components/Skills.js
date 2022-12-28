@@ -21,21 +21,26 @@ const Skills = ({ isDarkMode }) => {
   }, []);
   const skills = [
     { type: "HTML", level: 90 },
-    { type: "CSS", level: 70 },
-    { type: "JavaScript", level: 87 },
-    { type: "jQuery", level: 92 },
+    { type: "JavaScript", level: 90 },
     { type: "BootStrap", level: 90 },
     { type: "React", level: 95 },
+    { type: "GraphQL", level: 80 },
+    { type: "Redux Tool Kit", level: 85 },
+    { type: "Remix.js", level: 85 },
     { type: "Angular", level: 85 },
-    { type: "Vue", level: 45 },
     { type: "PHP", level: 85 },
     { type: "MySQL", level: 85 },
-    { type: "MongoDB", level: 30 },
-    { type: "NodeJS", level: 45 },
-    { type: "ExpressJS", level: 45 },
+    { type: "Ionic", level: 75 },
+    { type: "MongoDB", level: 80 },
+    { type: "NodeJS", level: 80 },
+    { type: "ExpressJS", level: 80 },
     { type: "Git", level: 85 },
-    { type: "Next.js", level: 65 },
-    { type: "TypeScript", level: 75 },
+    { type: "Next.js", level: 85 },
+    { type: "TypeScript", level: 85 },
+    { type: "jQuery", level: 92 },
+    { type: "CSS", level: 70 },
+    { type: "AWS", level: 45 },
+    { type: "Vue", level: 45 },
   ];
 
   const saturation = 95;
@@ -51,7 +56,7 @@ const Skills = ({ isDarkMode }) => {
             >
               <div className="card-header">
                 <div className="card-title text-center">
-                  <h3>Skills I Learnt</h3>
+                  <h3>Skills I Earned</h3>
                 </div>
               </div>
               <div className="card-body skills" style={{ minHeight: 500 }}>
