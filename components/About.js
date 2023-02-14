@@ -98,7 +98,7 @@ const About = () => {
           </div>
           <div className="col-md-12 my-4">
             <h2 className="text-center about-header">
-              My current interest and skills that I am interested in
+              My current skills and interest that I am currently working on
             </h2>
             <ul className="list-groups list-group-flush  about-text font-secondary p-0">
               {myInterestSkills.map((ele) => (
