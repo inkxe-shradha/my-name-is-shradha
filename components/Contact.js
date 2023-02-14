@@ -29,10 +29,10 @@ const Contact = () => {
       })
         .then((response) => response.json())
         .then((response) => {
-          console.log(response);
           setIsLoading(false);
           setSuccessMessage(`Thanks for connecting with me. I would appreciate your time to
                 visit my website.`);
+          formik.resetForm();
         });
     },
   });

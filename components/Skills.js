@@ -24,12 +24,13 @@ const Skills = ({ isDarkMode }) => {
     { type: "JavaScript", level: 90 },
     { type: "BootStrap", level: 90 },
     { type: "React", level: 95 },
+    { type: "Material UI", level: 85 },
     { type: "GraphQL", level: 80 },
     { type: "Redux Tool Kit", level: 85 },
     { type: "Remix.js", level: 85 },
     { type: "Angular", level: 85 },
-    { type: "PHP", level: 85 },
-    { type: "MySQL", level: 85 },
+    { type: "PHP", level: 75 },
+    { type: "MySQL", level: 75 },
     { type: "Ionic", level: 75 },
     { type: "MongoDB", level: 80 },
     { type: "NodeJS", level: 80 },
@@ -39,11 +40,15 @@ const Skills = ({ isDarkMode }) => {
     { type: "TypeScript", level: 85 },
     { type: "jQuery", level: 92 },
     { type: "CSS", level: 70 },
+    { type: "SCSS", level: 70 },
     { type: "AWS", level: 45 },
+    { type: "Azure Devops", level: 45 },
+    { type: "Tailwind CSS", level: 45 },
+    { type: "Agile Methodology", level: 80 },
     { type: "Vue", level: 45 },
   ];
 
-  const saturation = 95;
+  const saturation = 45;
   const hue = isDarkMode ? 320 : 290;
 
   return (
@@ -72,7 +77,7 @@ const Skills = ({ isDarkMode }) => {
                       style={{
                         width: `${skill.level}%`,
                         backgroundColor: `hsl(${hue}, ${saturation}%, ${
-                          100 / (index + 3.5)
+                          100 / (index + 4.5)
                         }%)`,
                       }}
                     >

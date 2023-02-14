@@ -8,6 +8,7 @@ const IntroductionBox = () => {
       block: "start",
     });
   };
+  const myAge = new Date().getFullYear() - 1996 - 1;
   return (
     <Element name="home">
       <div className="page__intro intro">
@@ -21,16 +22,16 @@ const IntroductionBox = () => {
                 I&apos;m a Full Stack Web Developer.
               </span>
               <div className="intro__text">
-                Hey! I am Shradha Suman Praharaj, a 26 year old web developer,
-                teacher, Freelancer and Gamer(Life needs to be enjoyed.. Right?)
-                living in Sliver City Cuttack, Odisha. I am currently working as
-                Senior Software Engineer at{" "}
+                Hey! I am Shradha Suman Praharaj, a {myAge} year old web
+                developer, teacher, Freelancer and Gamer(Life needs to be
+                enjoyed.. Right?) living in Sliver City Cuttack, Odisha. I am
+                currently working as Senior Software Engineer at{" "}
                 <a
-                  href="https://www.mindtree.com/"
+                  href="https://www.ltimindtree.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Mindtree
+                  LTIMindtree
                 </a>
                 .
                 <br />

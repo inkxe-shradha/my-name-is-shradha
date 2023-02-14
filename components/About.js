@@ -1,6 +1,7 @@
 import React from "react";
 import { Element } from "react-scroll/modules";
 import CountUp, { useCountUp } from "react-countup";
+import { myInterestSkills } from "../models/myProjectModel";
 const About = () => {
   const getCurrentYearExperience = new Date().getFullYear() - 2018;
   const count = React.useRef(116032 + Math.floor(Math.random(100) * 100));
@@ -19,6 +20,8 @@ const About = () => {
     }, 10000);
     return () => clearInterval(interval);
   }, []);
+
+  const counter = new Date().getDate() + new Date().getMinutes();
 
   return (
     <Element name="about">
@@ -39,16 +42,38 @@ const About = () => {
               organization&apos;s growth.
               <br />
               <br />
-              I am a big fan of open-source projects and communities over the
-              internet and always looking for an opportunity to contribute
-              according to my skill sets. Always seeking an opportunity to learn
-              research and develop new skills.
+              As a highly skilled and motivated JavaScript developer, I bring a
+              strong technical background and a passion for delivering
+              high-quality web applications to the table. With extensive
+              experience using{" "}
+              <strong>JavaScript, HTML, CSS, and related technologies,</strong>
+              I am confident in my ability to build dynamic and engaging user
+              experiences that meet the needs of diverse business stakeholders.
               <br />
               <br />
-              Lastly, I can say let&apos; connect and help each other to build
-              our and other careers. (Helping is a God Gifted Personality to
-              Human Beings, let&apos; used it to give smile on someone&apos;
-              face) &#128516;
+              Throughout my career, I have honed my skills in developing complex
+              web applications, working with cross-functional teams, and
+              leveraging the latest technologies to bring innovative ideas to
+              life. My expertise in JavaScript frameworks and libraries such as{" "}
+              <strong>React, Angular, and Vue.js,</strong> as well as my
+              familiarity with popular frontend libraries and tools, enables me
+              to create high-performance and responsive applications that meet
+              the needs of end-users.
+              <br />
+              <br />
+              In addition to my technical skills, I am also a creative
+              problem-solver and a strategic thinker. I have a proven track
+              record of delivering projects on time and within budget, and I am
+              always looking for new and better ways to improve the user
+              experience and optimize web application performance.
+              <br />
+              <br />
+              Overall, I am a highly driven and results-oriented JavaScript
+              developer who is committed to delivering high-quality,
+              user-centered solutions that meet the needs of both clients and
+              end-users. I am confident in my ability to bring value to any team
+              and look forward to the opportunity to contribute my skills and
+              experience to your organization.
             </p>
           </div>
           <div className="col-md-12 my-4">
@@ -73,26 +98,21 @@ const About = () => {
           </div>
           <div className="col-md-12 my-4">
             <h2 className="text-center about-header">
-              What is my current interest?
+              My current interest and skills that I am interested in
             </h2>
+            <ul className="list-groups list-group-flush  about-text font-secondary p-0">
+              {myInterestSkills.map((ele) => (
+                <li key={ele.id} className="list-group-item">
+                  👉 {ele.description}
+                </li>
+              ))}
+            </ul>
             <p className=" about-text font-secondary">
-              {"->"} I believe in upgrading your skills and gaining knowledge
-              and hands-on.
-              <br />
-              <br />
-              {"->"} I believe that information is wealth and knowledge is
-              power.
-              <br />
-              <br />
-              {"->"} That&apos;s why I love to learn new things. Some of my
-              interests are Deep diving in Javascript (Both in frontend and
-              backend), Learning AI, getting hands-on experience with AWS and
-              cloud base systems, and Learning Android development skills like
-              React Native, Kotlin, and Flutter, etc...
-              <br />
-              <br />
-              {"->"} I know this would be tough but I believe your passion is
-              your success, and My passion is learning new things.
+              Lastly I believe in upgrading your skills and gaining knowledge
+              and hands-on the projects gives you more experience and expertise
+              to deal with real world problems. I know this would be tough but I
+              believe your passion is your success, and My passion is learning
+              new things.
             </p>
           </div>
           <div className="col-md-12 my-4">
@@ -111,7 +131,7 @@ const About = () => {
               </div>
               <div className="col-md-3">
                 <i className="bx bxs-bug-alt bx-tada"></i>
-                <CountUp end={1000} delay={0}>
+                <CountUp end={1000 + counter} delay={0}>
                   {({ countUpRef }) => (
                     <div className="counter">
                       <span ref={countUpRef} />
