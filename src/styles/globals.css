@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #6500FF;
+  --color-brand-secondary: #FF00FF;
+  --color-brand-accent: #FF6B35;
+  --font-sans: 'Montserrat', sans-serif;
+  --font-display: 'Neucha', cursive;
+
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border-color);
+}
+
+@layer base {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-card: #ffffff;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --border-color: #e5e7eb;
+  }
+  
+  .dark {
+    --bg-primary: #131417;
+    --bg-secondary: #1f2229;
+    --bg-card: #252830;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --border-color: #374151;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-bg-primary text-text-primary font-sans antialiased;
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  @apply bg-bg-secondary;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-primary rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-brand-secondary;
+}
