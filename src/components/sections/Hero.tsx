@@ -6,8 +6,10 @@ import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
 import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 
+import { personalInfo } from "@/lib/data/personal";
+
 export default function Hero() {
-  const myAge = new Date().getFullYear() - 1996 - 1;
+  const myAge = new Date().getFullYear() - personalInfo.birthYear - 1;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -51,17 +53,17 @@ export default function Hero() {
             className="flex-1 max-w-2xl text-center md:text-left"
           >
             <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl font-bold mb-4">
-              Hi, I'm <span className="text-brand-primary">Shradha</span>
+              Hi, I'm <span className="text-brand-primary">{personalInfo.name}</span>
             </motion.h1>
 
             <motion.h2 variants={itemVariants} className="text-xl md:text-2xl font-display text-brand-secondary mb-6 h-8">
-              I'm a Full Stack AI Engineer
+              I'm a {personalInfo.role}
             </motion.h2>
 
             <motion.p variants={itemVariants} className="text-base md:text-lg text-text-secondary font-display mb-8 leading-relaxed">
-              Hey! I am Shradha Suman Praharaj, a {myAge} year old Full Stack Web Developer, AI Engineer, teacher, Freelancer and Gamer(Life needs to be enjoyed.. Right?) living in Sliver City Cuttack, Odisha. I am currently working as Senior Software Engineer at{" "}
-              <a href="https://www.ltm.com/" target="_blank" rel="noreferrer" className="text-[#dc3535] font-bold hover:underline">
-                LTM
+              Hey! I am {personalInfo.fullName}, a {myAge} year old Full Stack Web Developer, AI Engineer, teacher, Freelancer and Gamer(Life needs to be enjoyed.. Right?) living in {personalInfo.location}. I am currently working as Senior Software Engineer at{" "}
+              <a href={personalInfo.company.url} target="_blank" rel="noreferrer" className="text-[#dc3535] font-bold hover:underline">
+                {personalInfo.company.name}
               </a>.
             </motion.p>
 
@@ -82,13 +84,13 @@ export default function Hero() {
               </ScrollLink>
 
               <div className="flex items-center gap-4">
-                <a href="https://twitter.com/shradhasuman21" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border-2 border-[#1da1f2] text-[#1da1f2] flex items-center justify-center hover:bg-[#1da1f2] hover:text-white transition-all hover:scale-110">
+                <a href={personalInfo.socialLinks.twitter} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border-2 border-[#1da1f2] text-[#1da1f2] flex items-center justify-center hover:bg-[#1da1f2] hover:text-white transition-all hover:scale-110">
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="https://www.linkedin.com/in/shradha-suman-praharaj20" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border-2 border-[#0077b5] text-[#0077b5] flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-all hover:scale-110">
+                <a href={personalInfo.socialLinks.linkedin} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border-2 border-[#0077b5] text-[#0077b5] flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-all hover:scale-110">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://github.com/inkxe-shradha" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border-2 border-text-primary text-text-primary flex items-center justify-center hover:bg-text-primary hover:text-bg-primary transition-all hover:scale-110">
+                <a href={personalInfo.socialLinks.github} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border-2 border-text-primary text-text-primary flex items-center justify-center hover:bg-text-primary hover:text-bg-primary transition-all hover:scale-110">
                   <Github className="w-5 h-5" />
                 </a>
               </div>
@@ -112,7 +114,7 @@ export default function Hero() {
               <div className="relative w-full h-full rounded-full overflow-hidden">
                 <Image
                   src="/assets/images/profile.jpg"
-                  alt="Shradha Suman Praharaj"
+                  alt={personalInfo.fullName}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   priority

@@ -1,4 +1,9 @@
-export const skills = [
+export interface Skill {
+  type: string;
+  level: number;
+}
+
+export const skills: Skill[] = [
   { type: "HTML", level: 90 },
   { type: "JavaScript", level: 90 },
   { type: "BootStrap", level: 90 },

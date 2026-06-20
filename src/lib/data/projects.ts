@@ -1,4 +1,18 @@
-export const myProjectData = [
+export interface Project {
+  id: number;
+  image: string;
+  name: string;
+  description: string;
+  techStack: string;
+  demoLink: string;
+}
+
+export interface InterestSkill {
+  id: number;
+  description: string;
+}
+
+export const myProjectData: Project[] = [
   {
     id: 5,
     image: "/assets/projects/svb.png",
@@ -49,8 +63,7 @@ export const myProjectData = [
   },
 ];
 
-export const myInterestSkills = [
-  { id: 1, description: "AI Agentic Systems: Interest and experience in building autonomous AI agents that can plan, reason, use tools, and execute complex workflows independently." },
+export const myInterestSkills: InterestSkill[] = [
   // --- AI & Modern Tech Skills ---
   { id: 1, description: "AI Agentic Systems: Interest and experience in building autonomous AI agents that can plan, reason, use tools, and execute workflows independently." },
   { id: 2, description: "RAG (Retrieval-Augmented Generation): Designing context-aware AI applications utilizing semantic search, vector databases, and document chunking for grounded answers." },

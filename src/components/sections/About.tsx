@@ -5,9 +5,10 @@ import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { Code2, Bug, LineChart } from "lucide-react";
 import { myInterestSkills } from "@/lib/data/projects";
+import { personalInfo } from "@/lib/data/personal";
 
 export default function About() {
-  const getCurrentYearExperience = new Date().getFullYear() - 2018;
+  const getCurrentYearExperience = new Date().getFullYear() - personalInfo.experienceStartYear;
 
   return (
     <section id="about" className="py-20 relative">
@@ -65,7 +66,7 @@ export default function About() {
             </h2>
             <div className="max-w-4xl mx-auto text-base md:text-lg text-text-secondary font-display text-center space-y-4">
               <p>
-                I work as a Senior Software Engineer at <a href="https://www.ltm.com/" target="_blank" rel="noreferrer" className="text-[#dc3535] font-bold hover:underline">LTM</a>. Beyond my professional role, I enjoy freelancing, contributing to open-source, and continuously learning new things.
+                I work as a Senior Software Engineer at <a href={personalInfo.company.url} target="_blank" rel="noreferrer" className="text-[#dc3535] font-bold hover:underline">{personalInfo.company.name}</a>. Beyond my professional role, I enjoy freelancing, contributing to open-source, and continuously learning new things.
               </p>
               <p>
                 I am also passionate about teaching and have been training students at a local institution for the past year.
@@ -112,9 +113,9 @@ export default function About() {
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto"
           >
             {[
-              { icon: <Code2 className="w-10 h-10 text-brand-primary mb-4" />, count: 30000 + new Date().getDate() * new Date().getMinutes() * new Date().getSeconds(), label: "Code Written", suffix: "+" },
-              { icon: <Bug className="w-10 h-10 text-brand-secondary mb-4" />, count: 500 + new Date().getDate() * new Date().getMinutes() * new Date().getSeconds(), label: "Bugs Fixed", suffix: "+" },
-              { icon: <LineChart className="w-10 h-10 text-brand-accent mb-4" />, count: 50 + new Date().getDate() * new Date().getMinutes() * new Date().getSeconds(), label: "Projects Completed", suffix: "+" }
+              { icon: <Code2 className="w-10 h-10 text-brand-primary mb-4" />, count: personalInfo.baseStats.codeWritten + new Date().getDate() * new Date().getMinutes() * new Date().getSeconds(), label: "Code Written", suffix: "+" },
+              { icon: <Bug className="w-10 h-10 text-brand-secondary mb-4" />, count: personalInfo.baseStats.bugsFixed + new Date().getDate() * new Date().getMinutes() * new Date().getSeconds(), label: "Bugs Fixed", suffix: "+" },
+              { icon: <LineChart className="w-10 h-10 text-brand-accent mb-4" />, count: personalInfo.baseStats.projectsCompleted + new Date().getDate() * new Date().getMinutes() * new Date().getSeconds(), label: "Projects Completed", suffix: "+" }
             ].map((stat, i) => (
               <div key={i} className="flex flex-col items-center justify-center p-8 bg-bg-card rounded-2xl shadow-sm border border-border hover:shadow-md hover:border-brand-primary/50 transition-all group">
                 <div className="group-hover:scale-110 transition-transform duration-300">
