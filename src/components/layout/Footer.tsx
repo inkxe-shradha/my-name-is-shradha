@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { personalInfo } from "@/lib/data/personal";
 
 export default function Footer() {
   return (
@@ -16,7 +17,7 @@ export default function Footer() {
             <p className="text-sm text-text-secondary">
               Here is the{" "}
               <a
-                href="https://github.com/inkxe-shradha/my-name-is-shradha"
+                href={personalInfo.sourceCodeUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="font-bold text-brand-primary hover:underline"
@@ -28,7 +29,7 @@ export default function Footer() {
           </div>
 
           <div className="text-center space-y-2">
-            <h5 className="font-display font-bold text-2xl text-brand-secondary">Shradha Suman Praharaj</h5>
+            <h5 className="font-display font-bold text-2xl text-brand-secondary">{personalInfo.fullName}</h5>
             <div className="flex items-center justify-center gap-1 text-sm text-text-secondary">
               Made with <Heart className="w-4 h-4 text-orange-500 fill-orange-500" /> in India
             </div>
@@ -38,7 +39,7 @@ export default function Footer() {
             <p className="text-text-primary font-medium">Where you can find me?</p>
             <div className="flex items-center gap-4">
               <a
-                href="https://twitter.com/shradhasuman21"
+                href={personalInfo.socialLinks.twitter}
                 target="_blank"
                 rel="noreferrer"
                 className="w-10 h-10 rounded-full border-2 border-[#1da1f2] text-[#1da1f2] flex items-center justify-center hover:bg-[#1da1f2] hover:text-white transition-all hover:scale-110"
@@ -46,7 +47,7 @@ export default function Footer() {
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="https://www.linkedin.com/in/shradha-suman-praharaj20"
+                href={personalInfo.socialLinks.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 className="w-10 h-10 rounded-full border-2 border-[#0077b5] text-[#0077b5] flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-all hover:scale-110"
@@ -54,7 +55,7 @@ export default function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com/inkxe-shradha"
+                href={personalInfo.socialLinks.github}
                 target="_blank"
                 rel="noreferrer"
                 className="w-10 h-10 rounded-full border-2 border-text-primary text-text-primary flex items-center justify-center hover:bg-text-primary hover:text-bg-primary transition-all hover:scale-110"
