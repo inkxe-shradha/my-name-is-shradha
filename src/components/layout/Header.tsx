@@ -15,7 +15,7 @@ const NAV_LINKS = [
   { name: "Skills", to: "skills" },
   { name: "AI Journey", to: "ai-career" },
   { name: "Projects", to: "projects" },
-  { name: "Contact", to: "contact-us-form" },
+  { name: "Contact Us", to: "contact-us-form" },
 ];
 
 export default function Header() {
